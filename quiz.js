@@ -79,7 +79,7 @@ const myQuestions = [
     },
   ];
 
-  function buildQuiz(){
+function buildQuiz(){
     const output = [];
     reviewView.style.display="none";
     resultsView.style.display="none";
@@ -90,10 +90,10 @@ const myQuestions = [
         for(letter in currentQuestion.answers){
 
             answers.push(
-            `<label style="display:block;">
-                <input type="radio" name="question${questionNumber}" value="${letter}">
-                ${currentQuestion.answers[letter]} &nbsp&nbsp 
-            </label>`
+                `<label style="display:block;">
+                    <input type="radio" name="question${questionNumber}" value="${letter}">
+                    ${currentQuestion.answers[letter]} &nbsp&nbsp 
+                </label>`
             );
         }
         output.push(
@@ -103,7 +103,7 @@ const myQuestions = [
         }
     );
     quizContainer.innerHTML = output.join('');
-    }
+}
 
 function showReview(){
 
@@ -182,20 +182,21 @@ function showResults(){
     resultsContainer.innerHTML = `<h4> Your score is ${numCorrect} out of ${myQuestions.length} </h4>`;
   }
 
-  function goBack(){
+function goBack(){
     quizView.style.display="block";
     reviewView.style.display="none";
     resul
   }
 
-  function retake(){
+function retake(){
     window.location.reload();
   }
 
-  buildQuiz();
 
-  reviewButton.addEventListener('click', showReview);
-  backButton.addEventListener('click', goBack);
-  submitButton.addEventListener('click',showResults);
-  restartButton.addEventListener('click',retake);
+buildQuiz();
+
+reviewButton.addEventListener('click', showReview);
+backButton.addEventListener('click', goBack);
+submitButton.addEventListener('click',showResults);
+restartButton.addEventListener('click',retake);
 
