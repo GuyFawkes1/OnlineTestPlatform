@@ -176,6 +176,7 @@ function showResults(){
       }
       else{
         answerContainers[questionNumber].style.color = 'red';
+        console.log(answerContainer[questionNumber]);
       }
     });
   
